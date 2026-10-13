@@ -27,13 +27,13 @@ spring:
         format_sql: true
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${PORT:${SERVER_PORT:8080}}
   servlet:
     context-path: /
 
 app:
   jwt:
-    secret: ${JWT_SECRET:EviTrace@SecretKey#2024$JWT!Auth&Tamper-Evident-Chain-Of-Custody-Platform-256bit}
+    secret: ${JWT_SECRET}
     expiration: ${JWT_EXPIRATION:86400000}   # 24 hours in ms
     refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000} # 7 days
 
